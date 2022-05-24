@@ -22,7 +22,9 @@ class ReservoirNetwork:
         self.leak_rate = leak_rate
 
     def __call__(self, u):
-        self._state = (1 - self.leak_rate) * self._state + self.activator(
+        self._state = (
+            1 - self.leak_rate
+        ) * self._state + self.leak_rate * self.activator(
             self.input_weight @ u + self.recurrent_weight @ self._state
         )
         return self._state
