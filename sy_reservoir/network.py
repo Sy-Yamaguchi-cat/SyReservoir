@@ -25,7 +25,7 @@ class ReservoirNetwork:
         self._state = (
             1 - self.leak_rate
         ) * self._state + self.leak_rate * self.activator(
-            self.input_weight @ u + self.recurrent_weight @ self._state
+            u @ self.input_weight + self._state @ self.recurrent_weight
         )
         return self._state
 
