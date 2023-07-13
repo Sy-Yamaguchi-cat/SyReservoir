@@ -30,7 +30,7 @@ class ReservoirNetwork:
         return self._state
 
     input_weight: NDArray
-    rucurrent_weight: NDArray
+    recurrent_weight: NDArray
     activator: ActivatorBase
     leak_rate: Union[int, NDArray]
 
